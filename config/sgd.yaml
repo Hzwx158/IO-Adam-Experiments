@@ -1,0 +1,21 @@
+model:
+  image_size: 32
+  patch_size: 4
+  num_classes: 10
+  channels: 3
+  dim: 128
+  depth: 6
+  heads: 16
+  mlp_dim: 2048
+  dropout: 0.1
+  emb_dropout: 0.1
+train:
+  batch_size: 32
+  epochs: 50
+  lr: 0.001
+  factor: 0.3
+  seed: 42
+  device: 'cuda:2'
+  data_root: './cifar10'
+  optim: 'optim.SGD' # 'AdamW_Decomposed'
+  model_save: './models/sgd.pt'

@@ -1,0 +1,23 @@
+model:
+  image_size: 32
+  patch_size: 4
+  num_classes: 10
+  channels: 3
+  dim: 128
+  depth: 6
+  heads: 16
+  mlp_dim: 2048
+  dropout: 0.1
+  emb_dropout: 0.1
+train:
+  batch_size: 32
+  epochs: 50
+  factor: 0.3
+  seed: 42
+  device: 'cuda:1'
+  data_root: './cifar10'
+  optim: 'AdamW_Decomposed' # 'AdamW_Decomposed'
+  model_save: './models/adamw_decomposed_l2.pt'
+optimizer:
+  lr: 0.001
+  max_queue_length: 2
